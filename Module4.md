@@ -122,22 +122,67 @@ Client becomes part of the network
 
 ---
 
-## 7. Power Saving Mechanisms
+## 7. Power Saving Scheme in WLAN MAC Layer
 
-### Purpose
-Reduce battery usage
+## Introduction
+Wireless devices consume more battery if the WiFi radio remains active continuously. To reduce power consumption, the MAC layer provides power saving mechanisms that allow devices to sleep when idle.
 
-### Types
+---
 
-1. **Legacy Power Save**
-   - Client sleeps
-   - AP buffers data
+# Working of Power Saving Mechanism
 
-2. **U-APSD (Unscheduled APSD)**
-   - Client requests data when needed
+1. Client informs the Access Point (AP) that it is entering power save mode.
+2. Client enters sleep mode.
+3. AP buffers incoming packets for the client.
+4. AP sends Beacon frames containing TIM information.
+5. Client wakes up periodically and checks for buffered data.
+6. AP transmits the stored packets to the client.
 
-3. **TWT (Target Wake Time)**
-   - Scheduled wake/sleep cycles (Wi-Fi 6)
+---
+
+# Types of Power Saving Mechanisms
+
+## 1. Continuously Aware Mode (CAM)
+
+- Device remains always active.
+- No communication delay.
+- High power consumption.
+
+### Applications
+- Video streaming
+- Online gaming
+
+---
+
+## 2. Power Save Polling (PSP)
+
+- Device sleeps during idle periods.
+- AP stores packets until the client wakes up.
+- Lower power consumption.
+
+### Applications
+- Smartphones
+- IoT devices
+
+---
+
+# Comparison Between CAM and PSP
+
+| Feature | CAM | PSP |
+|---|---|---|
+| Device State | Always Active | Sleeps Periodically |
+| Power Consumption | High | Low |
+| Delay | Very Low | Slight Delay |
+
+---
+
+# Important Terms
+
+## TIM (Traffic Indication Map)
+Indicates whether buffered data is available for sleeping clients.
+
+## DTIM (Delivery Traffic Indication Map)
+Used for broadcast and multicast traffic.
 
 ---
 
