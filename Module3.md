@@ -28,6 +28,17 @@
 - More resistant to noise
 - Used in 802.11b
 
+Working:
+### DSSS Transmission Steps
+1. Digital bits generated
+2. Combined with spreading code (chips)
+3. RF modulation performed
+4. Spread signal transmitted
+### Reception
+1. Receive spread signal
+2. De-spread using same code
+3. Recover original data
+
 ### FHSS (Frequency Hopping Spread Spectrum)
 - Rapidly switches frequencies
 - Avoids interference
